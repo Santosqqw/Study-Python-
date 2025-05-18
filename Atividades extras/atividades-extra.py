@@ -43,3 +43,22 @@ numero = int(input('Digite um valor: '))
 for i in range(1,11):
     resultado_multiplicacao = numero * i
     print(f'{numero} x {i} = {resultado_multiplicacao}')
+
+# # Média de Notas
+# # Descrição: Peça ao usuário para inserir 5 notas (de 0 a 10) e calcule a média delas.
+
+notas = []
+for i in range(1,6):
+    while True:
+        try:
+            valor = float(input(f'Digite a nota {i}: '))
+            if 0 <= valor <= 10:
+                notas.append(valor)
+                break
+            else:
+                print('A nota deve estar entre 0 e 10.')
+        except (ValueError, KeyboardInterrupt):
+            print('Programa interrompido ou entrada inválida.')
+media = sum(notas)/ len(notas)
+print(f'Notas inseridas: {notas}')
+print(f'A media das suas notas é {media:.2f}')
